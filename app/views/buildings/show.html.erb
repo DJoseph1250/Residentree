@@ -71,19 +71,19 @@
 
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
-function initialize() 
-  {var mapProp = {
-    center:new google.maps.LatLng( <%= @latitude %>, <%= @longitude %>),
-    zoom: 15,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
-  var marker=new google.maps.Marker({
-  position:new google.maps.LatLng( <%= @latitude %>, <%= @longitude %>),
-  });
-marker.setMap(map);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
+  function initialize() {
+    var mapProp = {
+      center:new google.maps.LatLng( <%= @latitude %>, <%= @longitude %>),
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    var marker=new google.maps.Marker({
+      position:new google.maps.LatLng( <%= @latitude %>, <%= @longitude %>),
+    });
+    marker.setMap(map);
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
 <body id = "background">
