@@ -1,5 +1,3 @@
-require 'yaml'
-
 Rails.application.configure do
   GA.tracker = Rails.application.secrets.google_analytics_code
   # Settings specified here will take precedence over those in config/application.rb.
