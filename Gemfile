@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 gem 'friendly_id', '~> 5.1.0'
 gem 'soda-ruby', :require => 'soda'
+# Ruby version
+ruby '2.3.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use SCSS for stylesheets
