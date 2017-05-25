@@ -62,6 +62,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'pry'
   gem 'thin'
   gem 'nokogiri'
   gem 'google-analytics-rails'
