@@ -49,6 +49,10 @@
     background-image: url(<%= @backgroundurl %>);
     background-size: 100%;
     background-attachment: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
   #disqus_thread {
@@ -64,28 +68,15 @@
 
 <% @latitude = @access[0]["latitude"] %>
 <% @longitude = @access[0]["longitude"] %>
-
-<script src="http://maps.googleapis.com/maps/api/js"></script>
-<script>
-function initialize() 
-  {var mapProp = {
-    center:new google.maps.LatLng( <%= @latitude %>, <%= @longitude %>),
-    zoom: 15,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
-  var marker=new google.maps.Marker({
-  position:new google.maps.LatLng( <%= @latitude %>, <%= @longitude %>),
-  });
-marker.setMap(map);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-
+<% @key = "AIzaSyAbHXZa0Rng6ZL4Q8MxRpMSozvbXzXcmCA" %>
 <body id = "background">
-<div id = 'head'><h1>RESIDENTREE</h1></div>
+<div id = 'head'><h1><%= link_to 'RESIDENTREE', root_path %></h1></div>
 <div id='top'>
-<div id="googleMap"></div>
+<iframe
+    id='googleMap'
+    frameborder="0" style="border:0"
+    src=<%="https://www.google.com/maps/embed/v1/place?key=#{@key}&q=#{@building.address.gsub(' ','+')},New+York,NY"%> allowfullscreen>
+</iframe>
 
 <% end %>
 
